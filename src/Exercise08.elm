@@ -1,6 +1,6 @@
 module Exercise08 exposing (Color(..), decoder)
 
-import Json.Decode exposing (Decoder, fail, succeed)
+import Json.Decode exposing (Decoder)
 
 
 
