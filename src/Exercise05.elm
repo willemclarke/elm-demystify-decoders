@@ -29,7 +29,9 @@ import Json.Decode exposing (Decoder, fail)
 
 decoder : Decoder String
 decoder =
-    fail "Implement me!"
+    Json.Decode.map2 String.repeat
+        (Json.Decode.field "repeat" Json.Decode.int)
+        (Json.Decode.field "term" Json.Decode.string)
 
 
 
