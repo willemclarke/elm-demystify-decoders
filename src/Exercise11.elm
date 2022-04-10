@@ -1,6 +1,6 @@
 module Exercise11 exposing (decoder)
 
-import Json.Decode exposing (Decoder, fail)
+import Json.Decode exposing (Decoder)
 
 
 
@@ -30,7 +30,11 @@ import Json.Decode exposing (Decoder, fail)
 
 decoder : Decoder (List Int)
 decoder =
-    fail "Implement me!"
+    Json.Decode.field "number" <|
+        Json.Decode.oneOf
+            [ Json.Decode.list Json.Decode.int
+            , Json.Decode.int |> Json.Decode.map (\int -> [ int ])
+            ]
 
 
 
